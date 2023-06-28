@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   i18n: {
-    locales: ["en", "de"],
-    defaultLocale: "en",
+    locales: ["es", "en"],
+    defaultLocale: "es",
+    localeDetection: false,
+  },
+  // remove image optimization
+  images: {
+    unoptimized: true,
   },
 };

@@ -1,22 +1,7 @@
-import { useTranslations } from "next-intl";
-import { useRouter } from "next/router";
-import Code from "../components/Code";
-import PageLayout from "../components/PageLayout";
+import Home from "views/Home/Home";
 
 export default function Index() {
-  const t = useTranslations("Index");
-  const { locale } = useRouter();
-
-  return (
-    <PageLayout title={t("title")}>
-      <p>
-        {t("description", {
-          locale,
-          code: (children) => <Code>{children}</Code>,
-        })}
-      </p>
-    </PageLayout>
-  );
+  return <Home />;
 }
 
 export function getStaticProps({ locale }) {
