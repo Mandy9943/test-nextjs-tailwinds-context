@@ -9,7 +9,7 @@ export class ReactFrontedPagesRepository {
 
   private readonly api: AxiosInstance = axios.create({
     baseURL: ReactFrontedPagesRepository.BASE_URL,
-    timeout: 1000,
+    timeout: 5000,
   });
 
   public async getSlides(): Promise<ISlide[]> {

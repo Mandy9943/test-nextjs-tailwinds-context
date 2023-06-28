@@ -1,6 +1,5 @@
 {
-  "Index": {
-    "title": "Home",
-    "description": "TMessages from the about page and other locales are not loaded."
+  "AboutUs": {
+    "title": "Translates only this wonderful title and the navbar"
   }
 }

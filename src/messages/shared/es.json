@@ -1,7 +1,11 @@
 {
   "Navigation": {
-    "index": "Start",
-    "about": "Über",
-    "switchLocale": "Zu {locale, select, de {Deutsch} en {Englisch} other {}} wechseln"
+    "index": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "tools": "Herramientas",
+    "partners": "Socios",
+    "contact": "Contactar",
+    "language": "Idioma"
   }
 }

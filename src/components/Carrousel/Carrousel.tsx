@@ -29,8 +29,9 @@ const Carrousel: React.FC<Props> = ({
       }
     }
   };
+
   return (
-    <div className="relative w-full px-10">
+    <div className="relative w-full px-9 md:px-10">
       <div className="flex flex-row items-center justify-between w-full ">
         <div className="flex items-center justify-center absolute h-full top-0 left-0">
           <ArrowButton moveSlide={moveSlide} arrowDirection="left" />
@@ -65,7 +66,6 @@ const Carrousel: React.FC<Props> = ({
           {visibleCards.map((card, index) => (
             <div
               key={index}
-              id="card"
               className="w-full"
               style={{
                 marginRight: index !== visibleCards.length - 1 && `${margin}px`,

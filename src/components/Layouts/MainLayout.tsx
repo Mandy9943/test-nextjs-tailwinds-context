@@ -1,4 +1,5 @@
 import Navbar from "components/Navbar/Navbar";
+import { AnimatePresence } from "framer-motion";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -6,8 +7,10 @@ interface MainLayoutProps {
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div className="relative">
-      <Navbar />
-      <div>{children}</div>
+      <AnimatePresence>
+        <Navbar />
+        <div>{children}</div>
+      </AnimatePresence>
     </div>
   );
 };

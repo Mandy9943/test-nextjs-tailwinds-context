@@ -11,7 +11,12 @@ interface IProps {
 const LocalesModal = ({ isOpen, onClose, otherLocales }: IProps) => {
   useClickOutside("modal", onClose);
   return (
-    <MyModal isOpen={isOpen} onClose={onClose} size="xs" borderRadius="xl">
+    <MyModal
+      isOpen={isOpen}
+      onClose={onClose}
+      borderRadius="xl"
+      width="md:w-[500px] w-[300px]"
+    >
       <div className="px-3 pt-4">
         {" "}
         <div className="flex items-center justify-between">

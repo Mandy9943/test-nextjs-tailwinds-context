@@ -5,7 +5,7 @@ interface ContainerProps {
 const Container = ({ children }: ContainerProps) => {
   return (
     <div className="w-full flex justify-center">
-      <div className="max-w-[80%] w-full">{children}</div>{" "}
+      <div className="max-w-[90%] md:max-w-[80%] w-full">{children}</div>{" "}
     </div>
   );
 };

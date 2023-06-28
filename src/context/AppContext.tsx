@@ -3,8 +3,19 @@ import { ReactFrontedPagesRepository } from "services/ReactFrontedPagesRepositor
 import { ISlide } from "types/slides.interface";
 
 // =================================================================================
-const initialState = {
-  slides: [],
+interface IAppState {
+  slides: {
+    data: ISlide[];
+    loading: boolean;
+    error: string;
+  };
+}
+const initialState: IAppState = {
+  slides: {
+    data: [],
+    loading: true,
+    error: "",
+  },
 };
 const AppContext = createContext({
   state: initialState,
@@ -12,12 +23,20 @@ const AppContext = createContext({
 
 export const AppProvider = ({ children }) => {
   const [slides, setSlides] = useState<ISlide[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchSlides = async () => {
-      const reactFrontedRepository = new ReactFrontedPagesRepository();
-      const slides = await reactFrontedRepository.getSlides();
-      setSlides(slides);
+      const repository = new ReactFrontedPagesRepository();
+      try {
+        const slides = await repository.getSlides();
+        setSlides(slides);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchSlides();
   }, []);
@@ -26,7 +45,11 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         state: {
-          slides,
+          slides: {
+            data: slides,
+            loading,
+            error,
+          },
         },
       }}
     >

@@ -2,11 +2,11 @@
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  size?: "xs" | "sm" | "md" | "lg" | "xl" | "full";
   background?: string;
   borderRadius?: string;
   children?: React.ReactNode;
   id?: string;
+  width?: string;
 }
 const Modal = ({
   isOpen,
@@ -14,18 +14,9 @@ const Modal = ({
   background,
   borderRadius,
   children,
-  size,
   id,
+  width = "w-[60%]",
 }: ModalProps) => {
-  const widthSizes = {
-    xs: "w-1/4",
-    sm: "w-1/2",
-    md: "w-3/4",
-    lg: "w-4/5",
-    xl: "w-4/5",
-    full: "w-full",
-  };
-
   return (
     <div
       className={`${
@@ -36,9 +27,7 @@ const Modal = ({
       <div
         className={`relative bg-white rounded-lg  ${
           background ? background : "bg-white"
-        } ${borderRadius ? borderRadius : "rounded-lg"} w-full  ${
-          size ? `${widthSizes[size]}` : "w-full"
-        }`}
+        } ${borderRadius ? borderRadius : "rounded-lg"} ${width}`}
       >
         <div className="absolute w-full flex justify-end px-4 pt-2 pb-4">
           <button

@@ -1,3 +1,4 @@
+import { DesignIcon, OptimizingIcon, ProblemsIcon } from "components/icons";
 import ES1x1 from "country-flag-icons/react/1x1/ES";
 import GB1x1 from "country-flag-icons/react/1x1/GB";
 import ES from "country-flag-icons/react/3x2/ES";
@@ -20,3 +21,9 @@ export const localesWithComponents = {
 };
 
 export const DAPP_INIT_ROUTE = "/";
+
+export const iconsServices = {
+  mobile: <ProblemsIcon />,
+  data_config: <DesignIcon />,
+  config: <OptimizingIcon />,
+};

@@ -2,6 +2,7 @@ import { NextIntlProvider } from "next-intl";
 // import global styles
 import "styles/global.css";
 
+import { AppProvider } from "context/AppContext";
 import { Inter } from "next/font/google";
 
 // If loading a variable font, you don't need to specify the font weight
@@ -33,9 +34,9 @@ export default function App({ Component, pageProps }) {
       // in a different time zone.
       timeZone="America/Havana"
     >
-      <div className={inter.className}>
+      <AppProvider>
         <Component {...pageProps} />
-      </div>
+      </AppProvider>
     </NextIntlProvider>
   );
 }
