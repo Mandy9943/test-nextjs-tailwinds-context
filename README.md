@@ -1,10 +1,8 @@
-<!-- Create a readme of a nextjs and tailwindcss prject that use next-intl and react context to handle globale state -->
  
 # Nextjs Tailwindcss Next-intl React Context
 
 This project is a simple example of how to use next-intl and react context to handle globale state.
 
-<!-- Deployed on https://vercel.com/cesar9943/test-nextjs-tailwinds-context -->
 ## Demo
 
 You can see a demo of this project on [https://test-nextjs-tailwinds-context.vercel.app/](https://test-nextjs-tailwinds-context.vercel.app/)
