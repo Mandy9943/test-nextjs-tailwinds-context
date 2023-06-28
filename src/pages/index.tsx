@@ -1,7 +1,19 @@
+import Head from "next/head";
 import Home from "views/Home/Home";
 
 export default function Index() {
-  return <Home />;
+  return (
+    <>
+      <Head>
+        <title>Prueba técnica de react/nextjs</title>
+        <meta
+          name="description"
+          content="Prueba técnica de react/nextjs usando tailwindscss, nextjs y react context"
+        />
+      </Head>
+      <Home />
+    </>
+  );
 }
 
 export function getStaticProps({ locale }) {
